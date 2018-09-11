@@ -1,0 +1,245 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+
+<!-- Mirrored from www.eecg.toronto.edu/~amza/ece454/lectures.html by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 22 Sep 2014 02:21:38 GMT -->
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=unicode">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="lectures_files/filelist.xml">
+<link rel=Edit-Time-Data href="lectures_files/editdata.html">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title> Computer Systems Programming, ECE454, Fall 2015</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>a</o:Author>
+  <o:LastAuthor>a</o:LastAuthor>
+  <o:Revision>5</o:Revision>
+  <o:TotalTime>3</o:TotalTime>
+  <o:Created>2014-09-04T21:51:00Z</o:Created>
+  <o:LastSaved>2014-09-04T21:55:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>109</o:Words>
+  <o:Characters>624</o:Characters>
+  <o:Lines>5</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>732</o:CharactersWithSpaces>
+  <o:Version>15.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="lectures_files/themedata.thmx">
+<link rel=colorSchemeMapping href="lectures_files/colorschememapping.xml">
+<link rel=Stylesheet type="text/css" media=all title=compact href=default.css>
+<link rel=Stylesheet type="text/css" media=all title=compact href=local.css>
+<style>
+</style>
+</head>
+
+<body bgcolor=white lang=EN-US link="#2020A0" vlink="#2020A0" style='tab-interval:
+36.0pt'>
+
+<div class=WordSection1>
+
+<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='border:none;border-right:solid #CCCCCC 1.0pt;
+  mso-border-right-alt:solid #CCCCCC .75pt;padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <p class=MsoNormal style='line-height:18.0pt'><span style='font-size:13.5pt;
+  font-family:"Arial","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-no-proof:yes'><img width=199 height=1 id="_x0000_i1025"
+  src=spacer.html></span><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+  mso-fareast-font-family:"Times New Roman";color:black'><span
+  style='mso-spacerun:yes'> </span>Instructor: <a
+  href="http://www.eecg.toronto.edu/~amza/">Cristiana Amza</a><br>
+  Course Number: ECE454<br>
+  <a href="http://validator.w3.org/check?uri=referer"><span style='color:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+  <o:p></o:p></span></p>
+  <p class=MsoNormal style='line-height:18.0pt'><span style='font-size:13.5pt;
+  font-family:"Arial","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:black'><a href="index-2.html"><b>Home</b></a><br>
+  <a href="http://piazza.com/utoronto.ca/fall2015/ece454/home">Discussion
+  (piazza)</a><br>
+  <a href="lab-assignments.html">Lab Assignments</a><br>
+  <a href="lectures.html">Lecture Notes</a><br>
+<!--<a href="./past exams/index.html">Past Exams</a><br>-->
+      <a href="ta_schedule.html">TA Schedule by week</a><br>
+  <!--<a href="http://www.eecg.toronto.edu/~amza/ece454/examples">Sample Codes</a><br>-->
+  <a href="https://portal.utoronto.ca/">Grades (<span class=SpellE>UofT</span>
+  portal)</a><o:p></o:p></span></p>
+  </td>
+  <td width="100%" valign=top style='width:100.0%;padding:0cm 7.5pt 0cm 7.5pt'>
+  <h1 align=center style='text-align:center'><span style='font-family:"Arial","sans-serif";
+  mso-fareast-font-family:"Times New Roman";color:black'>Computer Systems
+  Programming<o:p></o:p></span></h1>
+  <h2 align=center style='margin-top:0cm;text-align:center;border:none;
+  mso-padding-alt:0cm 0cm 0cm 0cm'><span style='font-size:13.5pt;mso-fareast-font-family:
+  "Times New Roman";mso-bidi-font-family:Arial;color:black'>ECE454, Fall 2015<br>
+  University of Toronto<o:p></o:p></span></h2>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:13.5pt;font-family:"Arial","sans-serif";mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p>&nbsp;</o:p></span></p>
+  <div>
+  <div style='mso-element:para-border-div;border:none;border-top:solid #CCCCCC 1.0pt;
+  mso-border-top-alt:solid #CCCCCC .75pt;padding:8.0pt 0cm 0cm 0cm'>
+  <h2><span style='font-size:13.5pt;mso-fareast-font-family:"Times New Roman";
+  mso-bidi-font-family:Arial;color:black'>TA Schedule by week<o:p></o:p></span></h2>
+  </div>
+        <p><span style='font-size:13.5pt;font-family:"Arial","sans-serif";color:black'><o:p>Week 1 (Sept 15) -- Peter Sun in lab
+help 3-5 p.m (or longer if needed) in GB 243.</o:p></span></p>
+        <p><span style='font-size:13.5pt;font-family:"Arial","sans-serif";color:black'><o:p>Week 2 (Sept 21 - Sept 27) -- Jack (Mon and Tue) and Peter (Tue) in lab
+help in GB 243.</o:p></span></p>
+        <p><span style='font-size:13.5pt;font-family:"Arial","sans-serif";color:black'><o:p>Week 3 (Sept 28 - Oct 4) -- Jack (Mon and Tue) in lab
+help in GB 243.</o:p></span></p>
+        <p><span style='font-size:13.5pt;font-family:"Arial","sans-serif";color:black'><o:p>Week 4 (Oct 5 - Oct 11) -- Arnamoy (Mon) and Junji (Tue) in lab
+help in GB 243.</o:p></span></p>
+        <p><span style='font-size:13.5pt;font-family:"Arial","sans-serif";color:black'><o:p>Week 5 (Oct 12 - Oct 18) -- Jack (Mon and Tue) in lab
+help in GB 243.</o:p></span></p>
+        <p><span style='font-size:13.5pt;font-family:"Arial","sans-serif";color:black'><o:p>Week 6 (Oct 19 - Oct 25) -- Peter (Mon) and Xu (Tue) in lab
+help in GB 243.</o:p></span></p>
+        <p><span style='font-size:13.5pt;font-family:"Arial","sans-serif";color:black'><o:p>Week 7 (Oct 26 - Nov 1) -- Peter (Mon) and Xu (Tue) in lab
+help in GB 243.</o:p></span></p>
+        <p><span style='font-size:13.5pt;font-family:"Arial","sans-serif";color:black'><o:p>Week 8 (Nov. 1 - Nov. 7) -- Junji (Mon and Tue) in lab
+help in GB 243.</o:p></span></p>
+        <p><span style='font-size:13.5pt;font-family:"Arial","sans-serif";color:black'><o:p>Week 9 (Nov. 8 - Nov. 14) -- Junji (Mon and Tue) in lab
+help in GB 243.</o:p></span></p>
+        <p><span style='font-size:13.5pt;font-family:"Arial","sans-serif";color:black'><o:p>Week 10 (Nov. 15 - Nov. 21) -- Yongle (Mon and Tue) in lab
+help in GB 243.</o:p></span></p>
+        <p><span style='font-size:13.5pt;font-family:"Arial","sans-serif";color:black'><o:p>Week 11 (Nov. 22 - Nov. 28) -- Yongle (Mon and Tue) in lab
+help in GB 243.</o:p></span></p>
+  <p><span style='font-size:13.5pt;font-family:"Arial","sans-serif";color:black'><o:p>&nbsp;</o:p></span></p>
+  
+      
+      
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=632
+   style='width:474.0pt;mso-cellspacing:0cm;border:outset 3.0pt;mso-yfti-tbllook:
+   1184;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td width=229 style='width:172.0pt;background:gray;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><b><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:white'>Name<o:p></o:p></span></b></p>
+    </td>
+    <td width=403 style='width:302.0pt;background:gray;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><b><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:white'>Email</span></b><span
+    style='font-size:13.5pt;font-family:"Arial","sans-serif";mso-fareast-font-family:
+    "Times New Roman";color:white'><o:p></o:p></span></p>
+    </td>
+    <td width=403 style='width:302.0pt;background:gray;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><b><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:white'>Selfie</span></b><span
+    style='font-size:13.5pt;font-family:"Arial","sans-serif";mso-fareast-font-family:
+    "Times New Roman";color:white'><o:p></o:p></span></p>
+    </td>   
+   </tr>
+
+      <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+    <td width=229 style='width:172.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'>Xu Zhao <o:p></o:p></span></p>
+    </td>
+    <td width=403 style='width:302.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'> <a href="mailto:nuk.zhao@mail.utoronto.ca" target="_top">Mail</a> <o:p></o:p></span></p>
+    </td>
+          <td width=403 style='width:302.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'> <img src="tas/xu.jpg" alt="Xu Zhao" style="width:80px;height:100px;"> <o:p></o:p></span></p>
+    </td>
+      </tr>
+      
+            <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+    <td width=229 style='width:172.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'>Jack Luo <o:p></o:p></span></p>
+    </td>
+    <td width=403 style='width:302.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'> <a href="mailto:jack.luo@mail.utoronto.ca" target="_top">Mail</a> <o:p></o:p></span></p>
+    </td>
+          <td width=403 style='width:302.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'> <img src="tas/jack.jpg" alt="Xu Zhao" style="width:80px;height:100px;"> <o:p></o:p></span></p>
+    </td>
+      </tr>
+      
+      
+                  <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+    <td width=229 style='width:172.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'>Junji Zhi <o:p></o:p></span></p>
+    </td>
+    <td width=403 style='width:302.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'> <a href="mailto:zhij@cs.toronto.edu" target="_top">Mail</a> <o:p></o:p></span></p>
+    </td>
+          <td width=403 style='width:302.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'> <img src="tas/junji.jpg" alt="Xu Zhao" style="width:80px;height:100px;"> <o:p></o:p></span></p>
+    </td>
+      </tr>
+      
+                       <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+    <td width=229 style='width:172.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'>Peter Sun<o:p></o:p></span></p>
+    </td>
+    <td width=403 style='width:302.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'> <a href="mailto:peteryiping.sun@mail.utoronto.ca" target="_top">Mail</a> <o:p></o:p></span></p>
+    </td>
+          <td width=403 style='width:302.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'> <img src="tas/peter.jpg" alt="Xu Zhao" style="width:80px;height:100px;"> <o:p></o:p></span></p>
+    </td>
+      </tr> 
+
+      
+                           <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+    <td width=229 style='width:172.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'>Yongle Zhang<o:p></o:p></span></p>
+    </td>
+    <td width=403 style='width:302.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'> <a href="mailto:yongle.zhang@mail.utoronto.ca" target="_top">Mail</a> <o:p></o:p></span></p>
+    </td>
+          <td width=403 style='width:302.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p class=MsoNormal><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+    mso-fareast-font-family:"Times New Roman";color:black'> <img src="tas/yongle.jpg" alt="Yongle Zhang" style="width:80px;height:100px;"> <o:p></o:p></span></p>
+    </td>
+      </tr> 
+</table>
+
+  </div>
+  </td>
+ </tr>
+
+
+</table>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+
+<!-- Mirrored from www.eecg.toronto.edu/~amza/ece454/lectures.html by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 22 Sep 2014 02:21:38 GMT -->
+</html>
+<!-- :::!template-end::: -->

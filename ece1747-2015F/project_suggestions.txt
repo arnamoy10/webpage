@@ -1,0 +1,119 @@
+
+			 Non-exhaustive Project List
+			 ----------------------------
+
+As I have also stated in class, any project in the Parallel Processing
+and Distributed Systems area including multiprocessors, clusters and
+wide-area platforms such as Planetlab, can be selected as a Parallel
+Programming project.  Topics in software for these platforms may be as
+varied as Middleware, Aspect Orientation, Multiprocessor OS,
+transaction processing, compiler parallelization or runtime
+optimization.
+
+You can either optimize the system or optimize a particular
+application.  It could be something that may help your research along
+as well as be a good fit for this course.  As long as the project
+forces you to either reason about and optimize a parallel/distributed
+system or actually program in a parallel/distributed way, your project
+will be a good fit for this class.  If all else fails, come talk to me
+about it once you have formed a team and I can give you some more
+suggestions.
+
+Apart from pthreads, MPI and Open-MP, There will be a couple of
+software packages available for you.  Some sophisticated parallel
+programming software packages will be provided.  These include the
+Vista in-memory transactional system (source) and the TreadMarks
+software Distributed Shared Memory System (library).  Other code that
+you can download and use is the RSIM multiprocessor simulator.  This
+is intended only for people interested in computer architecture
+parallelism or optimizing programs to run better on parallel
+architectures.
+
+Vista is an in-memory transactional code.  You can use it to run a
+transaction processing workload like the two applications that come
+with Vista.
+
+TreadMarks is a software DSM using which you can parallelize an
+application to run on a network of workstations.  The reason why I
+cannot give you the TreadMarks source code to play with is that
+TreadMarks is a commercial system, while Vista is public domain code.
+
+Examples of projects:
+
+1. You have an application that you would like to parallelize.
+For instance, if your Department is Physics, you may have a mollecular
+dynamics application that you would like to speed up by running on
+either a multiprocessor or a cluster of workstations.
+You should first reason about and detect the data races by understanding 
+the application code and then introduce synchronization in this application 
+by using pthreads, or explicitly exchange data between parallel processing 
+units by using MPI, or insert Open-MP pragmas in the application code.
+Finally, you can use the TreadMarks library to parallelize you application
+on a cluster of workstations. You run the application sequentially and
+in parallel and document the speedup or absence thereof. If speedup
+is non-existant or worse, i.e., your application runs much slower in
+parallel then you should document your detection-of-overhead-causes process.
+There is a sample presentation pointer at the end of this document
+for a project in this category.
+
+
+2. There are "famous" applications out there that have not been 
+parallelized. For instance, the source code for the Quake game is
+available. You can try to first run Quake and amuze yourselves :-).
+Then you download the source and parallelize Quake by using multithreading
+or TreadMarks. If you want to tackle this project, please read the
+Quake parallelization paper that is on the reading list. You may not
+want to do it the same way they did it 
+(just because they were not very successful).
+Even better, write a simpler Quake-like benchmark of your own that
+extracts some very simple features of the Quake game and then parallelize
+your own benchmark.
+
+3. You take a set of small applications that are already parallelized
+(e.g., SOR and other existing benchmarks that I will provide or you can
+look up yourselves) and rewrite the applications to improve locality with
+the goal to improve their cache behavior.
+
+4. You may want to implement a distributed locking scheme with reader-writer
+locking either by following the Mellor-Crummey Scott paper provided
+in the reading list or by another distributed scheme (e.g., the one 
+used in most Software DSM systems described in the TreadMarks paper
+provided). You will need to do some network programming for this
+project. A sample of network communication using sockets will be provided.
+Then you can use your distributed locking scheme to implement locking on
+top of a cluster of workstations.
+Document the performance of your locks with and without lock contention.
+
+5. You can implement the bare-bones of software transactional memory,
+on a single machine. For this project, you will need to think of a way
+to handle detecting data races and undoing modifications when a data
+race is detected.  You may do this by understanding the Vista code and
+reusing some of its code for "undo"-ing modifications.
+
+6. You can compare the multi-threaded versus event-driven versus other
+models such as lazy asynchronous I/O (please see the Asynchronous I/O
+paper in the reading list) for a simple implementation of a server or
+server proxy code such as a web server skeleton or an open source
+database (MySQL) or a simple proxy code of your own.  If you want to
+explore this project an asynchronous I/O library will be provided to
+you.
+
+7. You can implement a database query result cache that sits inside a
+proxy on top of a MySQL database. The cache will need to do "parallel
+processing" to handle incoming connections so you will need to use
+either multithreading or event-driven programming.  An example of a C
+client and a database will be provided. Just ask me for them if you
+want to do this project.  For this project you will document the query
+cache hit rate and the improvement or lack thereof that it brings. You
+need to argue that you understand why you did or did not get an
+improvement.
+
+8. Implement a simple scheme for an Open-MP interface over networks 
+of workstations scheme (please see the related paper in the reading list).
+For simplicity you can assume that you have an application without writes
+or where consistency does not matter (such as in the Travelling Salesman
+Problem) and you just want to parallelize some of the code. 
+Your scheme should implement a fork/join model over a cluster of workstations.
+
+
+

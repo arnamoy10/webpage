@@ -1,0 +1,117 @@
+
+
+    CLASS GOALS AND ADVICE ON RESEARCH PROJECTS AND PAPER PRESENTATIONS
+    -------------------------------------------------------------------
+
+
+I have designed this class in such a way to give you some fundamental
+lessons in how to do research in grad school.  Both lectures and paper
+selection introduce some concepts without exhaustively exploring the
+topics. Additional material will be provided, so you can explore the
+introduced topics yourself.
+
+In particular, the research papers were selected such that to give you
+a sense of how beneficial it is to have an interdisciplinary approach
+to research. You will see ideas and patterns that appeared originally
+in one domain (e.g., parallel hardware architecture or databases)
+being taken up and applied in a different domain (e.g., OS or
+distributed systems) with a lot of success.  In the same vein, most
+assignment problems and especially projects will be incompletely
+specified.  This is to prepare you, in a minor way, for undertaking a
+research topic, where almost everything is unspecified. Try to become
+independent and take charge of your project. I welcome discussions and
+questions about your projects, assignments and paper selection. On the
+other hand, when talking to you, I will try to establish whether you
+have tried to answer your own questions and whether you have analysed
+the problems you are asking an answer to.
+
+Finally, I hope that being in and working for this class will teach you 
+some very essential things that cannot be taught directly, but will
+have a profound impact on your future success. This is: how to work
+with your colleagues, your professors, your advisor, how to behave in
+a professional manner for your larger audience that will be there for
+you once you start doing research, publishing, going to conferences,
+delivering conference presentations, starting to have your own network of 
+professional contacts.
+
+First and foremost, impeccable work ethics is one of the most
+important aspects of professional behavior in grad school. There is no
+surer way to destroy your academic career without possibility of
+redemption than if you cheat during a grad course or show consistent
+lack of seriosity in other ways (e.g., exhibit repeated disruptive
+behavior). This is not undergraduate anymore where some courses and
+topics may have been forced down your throat.  Presumably you are in
+grad school because you want to learn something and you want to do
+research. This applies when you come to class as well.  Your presence
+in class is not mandatory. I am very open and flexible to suggestions
+from you regarding the class format, the paper selection and so
+forth. In particular, for the project, I will give you a lot of
+latitude so you can maximize the benefit for your own research topic;
+for the papers, I will give you some extra selections, listed under
+"Other" to choose from.  You are welcome to pick one of those for
+paper discussions instead of the main papers suggested if you like.
+The grade you get in this class, in itself, should be less important
+to you than what you can learn from the class. And this is, in a large
+part, up to you.  
+
+Remember this: Your success is not defined necessarily quantitatively
+anymore.  As an example, it does not matter to me whether you get a
+good speedup in performance for your application after you have
+parallelized it in your class project or assignment.  What matters is
+whether you have tried to analyze your experiments and you have looked
+for sources of overhead and you have tried to eliminate them.  It does
+not matter to me whether you are a naturally born-speaker or not and
+whether you make mistakes or have questions yourself during your
+presentation because you could not understand the paper very well. It
+is natural for you to still have questions after reading a paper or
+going to a conference and listening to a talk, especially for papers
+and talks that are not in your direct area. Being open to learning
+from other areas that you are not an expert in, or even know nothing
+about is the strength of doing interdisciplinary research. You will
+understand the main idea, or the general approach from a paper in a
+different area (details not necessary) and you will try to see how it
+fits your own research area, if at all.  Just remember to look for the
+key-points of each paper and not get bogged down by its details.  It
+is natural to be slightly uncomfortable when reading a paper in a
+completely new area. If you are very comfortable in your work and you
+know all the answers, it means you are simply not doing research.
+Also, the time is past when people that simply work in a very narrow
+research niche of their own and never look at the big picture can
+continue to be successful forever. Whether we like it or not, the
+computer field is changing very rapidly. The architects need to know
+about the software running on their architecture, the software
+developpers need to know about the applications and architectures that
+they are developping software for, the application developpers need to
+know something about how to program the application for performance
+using newer software packages and so on.  Expect to potentially have
+to broaden your research topic, integrate orthogonal research
+prototypes, or go from one research topic to another.  There will be
+at least some transitional discomfort in the process.  This class
+tries to prepare you for that.
+
+In spite of this and for the purposes of your paper presentation for
+the class, what matters is whether you have prepared your presentation
+to the best of your abilities, that you have thoroughly read and tried
+to understand the paper, that you have understood the key idea of the
+paper and you can express it. Details cannot be covered usually in a
+short presentation anyway and you are speaking to an audience with
+very varied backgrounds.  It is also a good idea to read suggested
+extra readings, and follow some pointers to related work from the
+paper itself.  It is important to try to have clean and uncluttered
+slides with key-points on them and not a lot of text without a point
+to it.  It is important to work towards delivering a logical flow in
+your talk.
+
+The bottom line is: it should not matter to you what letter grade you
+get in my class. What should matter to you and what ultimately also
+matters to your advisor, is whether or not you are on your way to
+becoming an independent thinker, a thorough and enthusiastic
+researcher and a true professional.
+
+Good luck with the class and I hope you'll enjoy it !
+
+Your instructor (Cristiana)
+
+
+
+

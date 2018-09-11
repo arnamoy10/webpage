@@ -1,0 +1,801 @@
+
+<!-- saved from url=(0046)http://www.eecg.toronto.edu/~amza/ece1747.html -->
+<html xmlns="http://www.w3.org/TR/REC-html40" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:st1="urn:schemas-microsoft-com:office:smarttags" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		
+		<meta content="Word.Document" name="ProgId">
+		<meta content="Microsoft Word 11" name="Generator">
+		<meta content="Microsoft Word 11" name="Originator">
+		<link href="http://www.eecg.toronto.edu/~amza/ece1747h/ece1747h_files/filelist.xml" rel="File-List">
+		<link href="http://www.eecg.toronto.edu/~amza/ece1747h/ece1747h_files/editdata.mso" rel="Edit-Time-Data">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->		<title>ECE 1747H Parallel Programming</title>
+	</head>
+	<body style="" lang="EN-US" link="blue" vlink="blue">
+		<o:smarttagtype name="country-region" namespaceuri="urn:schemas-microsoft-com:office:smarttags"></o:smarttagtype> <o:smarttagtype name="City" namespaceuri="urn:schemas-microsoft-com:office:smarttags"></o:smarttagtype> <o:smarttagtype name="place" namespaceuri="urn:schemas-microsoft-com:office:smarttags"></o:smarttagtype> <!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Cristiana</o:Author>
+  <o:LastAuthor>Cristiana</o:LastAuthor>
+  <o:Revision>33</o:Revision>
+  <o:TotalTime>6634</o:TotalTime>
+  <o:Created>2008-09-24T17:30:00Z</o:Created>
+  <o:LastSaved>2008-09-29T15:07:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2128</o:Words>
+  <o:Characters>12134</o:Characters>
+  <o:Company> </o:Company>
+  <o:Lines>101</o:Lines>
+  <o:Paragraphs>28</o:Paragraphs>
+  <o:CharactersWithSpaces>14234</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+		<style type="text/css">
+<!--{cke_protected}{C}%3C!%2D%2D%0A%20%2F*%20Font%20Definitions%20*%2F%0A%20%40font-face%0A%09%7Bfont-family%3AVerdana%3B%0A%09panose-1%3A2%2011%206%204%203%205%204%204%202%204%3B%0A%09mso-font-charset%3A0%3B%0A%09mso-generic-font-family%3Aswiss%3B%0A%09mso-font-pitch%3Avariable%3B%0A%09mso-font-signature%3A536871559%200%200%200%20415%200%3B%7D%0A%20%2F*%20Style%20Definitions%20*%2F%0A%20p.MsoNormal%2C%20li.MsoNormal%2C%20div.MsoNormal%0A%09%7Bmso-style-parent%3A%22%22%3B%0A%09margin%3A0in%3B%0A%09margin-bottom%3A.0001pt%3B%0A%09mso-pagination%3Awidow-orphan%3B%0A%09font-size%3A12.0pt%3B%0A%09font-family%3A%22Times%20New%20Roman%22%3B%0A%09mso-fareast-font-family%3A%22Times%20New%20Roman%22%3B%7D%0Ah1%0A%09%7Bmso-style-next%3ANormal%3B%0A%09margin-top%3A12.0pt%3B%0A%09margin-right%3A0in%3B%0A%09margin-bottom%3A3.0pt%3B%0A%09margin-left%3A0in%3B%0A%09mso-pagination%3Awidow-orphan%3B%0A%09page-break-after%3Aavoid%3B%0A%09mso-outline-level%3A1%3B%0A%09font-size%3A16.0pt%3B%0A%09font-family%3AArial%3B%0A%09mso-font-kerning%3A16.0pt%3B%0A%09font-weight%3Abold%3B%7D%0Ah2%0A%09%7Bmso-margin-top-alt%3Aauto%3B%0A%09margin-right%3A0in%3B%0A%09mso-margin-bottom-alt%3Aauto%3B%0A%09margin-left%3A0in%3B%0A%09mso-pagination%3Awidow-orphan%3B%0A%09mso-outline-level%3A2%3B%0A%09font-size%3A18.0pt%3B%0A%09font-family%3A%22Times%20New%20Roman%22%3B%0A%09font-weight%3Abold%3B%7D%0Aa%3Alink%2C%20span.MsoHyperlink%0A%09%7Bcolor%3Ablue%3B%0A%09text-decoration%3Aunderline%3B%0A%09text-underline%3Asingle%3B%7D%0Aa%3Avisited%2C%20span.MsoHyperlinkFollowed%0A%09%7Bcolor%3Ablue%3B%0A%09text-decoration%3Aunderline%3B%0A%09text-underline%3Asingle%3B%7D%0Ap%0A%09%7Bmso-margin-top-alt%3Aauto%3B%0A%09margin-right%3A0in%3B%0A%09mso-margin-bottom-alt%3Aauto%3B%0A%09margin-left%3A0in%3B%0A%09mso-pagination%3Awidow-orphan%3B%0A%09font-size%3A12.0pt%3B%0A%09font-family%3A%22Times%20New%20Roman%22%3B%0A%09mso-fareast-font-family%3A%22Times%20New%20Roman%22%3B%7D%0Aspan.small%0A%09%7Bmso-style-name%3Asmall%3B%7D%0Aspan.SpellE%0A%09%7Bmso-style-name%3A%22%22%3B%0A%09mso-spl-e%3Ayes%3B%7D%0Aspan.GramE%0A%09%7Bmso-style-name%3A%22%22%3B%0A%09mso-gram-e%3Ayes%3B%7D%0A%40page%20Section1%0A%09%7Bsize%3A8.5in%2011.0in%3B%0A%09margin%3A1.0in%201.25in%201.0in%201.25in%3B%0A%09mso-header-margin%3A.5in%3B%0A%09mso-footer-margin%3A.5in%3B%0A%09mso-paper-source%3A0%3B%7D%0Adiv.Section1%0A%09%7Bpage%3ASection1%3B%7D%0A%20%2F*%20List%20Definitions%20*%2F%0A%20%40list%20l0%0A%09%7Bmso-list-id%3A1096750756%3B%0A%09mso-list-template-ids%3A-809231038%3B%7D%0A%40list%20l0%3Alevel1%0A%09%7Bmso-level-number-format%3Abullet%3B%0A%09mso-level-text%3A%5CF0B7%3B%0A%09mso-level-tab-stop%3A.5in%3B%0A%09mso-level-number-position%3Aleft%3B%0A%09text-indent%3A-.25in%3B%0A%09mso-ansi-font-size%3A10.0pt%3B%0A%09font-family%3ASymbol%3B%7D%0A%40list%20l0%3Alevel2%0A%09%7Bmso-level-tab-stop%3A1.0in%3B%0A%09mso-level-number-position%3Aleft%3B%0A%09text-indent%3A-.25in%3B%7D%0A%40list%20l0%3Alevel3%0A%09%7Bmso-level-tab-stop%3A1.5in%3B%0A%09mso-level-number-position%3Aleft%3B%0A%09text-indent%3A-.25in%3B%7D%0A%40list%20l0%3Alevel4%0A%09%7Bmso-level-tab-stop%3A2.0in%3B%0A%09mso-level-number-position%3Aleft%3B%0A%09text-indent%3A-.25in%3B%7D%0A%40list%20l0%3Alevel5%0A%09%7Bmso-level-tab-stop%3A2.5in%3B%0A%09mso-level-number-position%3Aleft%3B%0A%09text-indent%3A-.25in%3B%7D%0A%40list%20l0%3Alevel6%0A%09%7Bmso-level-tab-stop%3A3.0in%3B%0A%09mso-level-number-position%3Aleft%3B%0A%09text-indent%3A-.25in%3B%7D%0A%40list%20l0%3Alevel7%0A%09%7Bmso-level-tab-stop%3A3.5in%3B%0A%09mso-level-number-position%3Aleft%3B%0A%09text-indent%3A-.25in%3B%7D%0A%40list%20l0%3Alevel8%0A%09%7Bmso-level-tab-stop%3A4.0in%3B%0A%09mso-level-number-position%3Aleft%3B%0A%09text-indent%3A-.25in%3B%7D%0A%40list%20l0%3Alevel9%0A%09%7Bmso-level-tab-stop%3A4.5in%3B%0A%09mso-level-number-position%3Aleft%3B%0A%09text-indent%3A-.25in%3B%7D%0A%40list%20l1%0A%09%7Bmso-list-id%3A1924753794%3B%0A%09mso-list-template-ids%3A620667142%3B%7D%0A%40list%20l1%3Alevel1%0A%09%7Bmso-level-number-format%3Abullet%3B%0A%09mso-level-text%3A%5CF0B7%3B%0A%09mso-level-tab-stop%3A.5in%3B%0A%09mso-level-number-position%3Aleft%3B%0A%09text-indent%3A-.25in%3B%0A%09mso-ansi-font-size%3A10.0pt%3B%0A%09font-family%3ASymbol%3B%7D%0Aol%0A%09%7Bmargin-bottom%3A0in%3B%7D%0Aul%0A%09%7Bmargin-bottom%3A0in%3B%7D%0A%2D%2D%3E-->		</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!-- #BeginTemplate "/Templates/standard.dwt" --><!-- ZoneLabs Privacy Insertion -->		<div class="Section1">
+			<h2 style="text-align: center;" align="center">
+				<span style="color: green;">&nbsp;</span><span style="color: purple;">ECE 1747H Parallel Programming<br>
+				Fall 2015</span></h2>
+			<div align="center">
+				<table class="MsoNormalTable" style="" border="0" cellpadding="0">
+					<tbody>
+						<tr style="">
+							<td style="padding: 0.75pt;" valign="top">
+								<p class="MsoNormal">
+									Instructor:</p>
+							</td>
+							<td style="padding: 0.75pt;">
+								<p class="MsoNormal">
+									Cristiana <span class="SpellE">Amza</span><br>
+									BA 4142<br>
+									(416) 946-0299<br>
+									amza@eecg.toronto.edu</p>
+							</td>
+						</tr>
+						<tr style="">
+							<td style="padding: 0.75pt;" valign="top">
+								<p class="MsoNormal">
+									TA:</p>
+							</td>
+							<td style="padding: 0.75pt;">
+								<p class="MsoNormal">
+									Arnamoy Bhattacharyya<br>
+									BA 4187<br>
+									b.arnamoy@mail.utoronto.ca</p>
+							</td>
+						</tr>
+						<tr style="">
+							<td style="padding: 0.75pt;">
+								<p class="MsoNormal">
+									Location:</p>
+							</td>
+							<td style="padding: 0.75pt;">
+								BA 4164</td>
+						</tr>
+						<tr style="">
+							<td style="padding: 0.75pt;">
+								<p class="MsoNormal">
+									Class Time:</p>
+							</td>
+							<td style="padding: 0.75pt;">
+								<p class="MsoNormal">
+									Fridays 3:00-5:00 PM</p>
+							</td>
+						</tr>
+						<tr style="">
+							<td style="padding: 0.75pt;">
+								<p class="MsoNormal">
+									Project List:</p>
+							</td>
+							<td style="padding: 0.75pt;">
+								<p class="MsoNormal">
+									<a href="http://www.eecg.toronto.edu/~amza/ece1747h/project_suggestions.txt">project_suggestions.txt</a></p>
+							</td>
+						</tr>
+						<tr style="">
+							<td style="padding: 0.75pt;">
+								<p class="MsoNormal">
+									Office Hours:</p>
+							</td>
+							<td style="padding: 0.75pt;">
+								<p class="MsoNormal">
+									Fridays 1:00-3:00 PM 
+									(BA 4142)</p>
+							</td>
+							 <!--<td style="padding: 0.75pt;">
+								<p class="MsoNormal">
+									Thursday</p>
+								<p class="MsoNormal">
+									BA 4142 2 p.m. - 4 p.m.</p>
+							</td>-->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p style="text-align: center;" align="center">
+				<br>
+				<h3 align="center"><a href="project_description.html">Important Information about Project</a></h3></p>
+			<div class="MsoNormal" style="text-align: center;" align="center">
+				<hr align="center" size="2" width="100%">
+			</div>
+			<h3>
+				Updates:
+			</h3>
+        
+        <p>
+                                <strong>- Sep. 17, 2015</strong>:&nbsp; Website Launched.
+                        </p>
+<!--
+			 <p>
+                                <strong>- Oct. 22, 2014</strong>:&nbsp; Please find the updated time of project class presentations below.
+                        </p>
+
+			<p>
+				<strong>- Sep. 11, 2014</strong>:&nbsp; Papers are assigned. You may find your names in the table. 
+
+			</p>
+			<p>
+				<strong>- Sep. 9, 2014</strong>:&nbsp; Welcome to this class. This Web page contains the main info for this course. The first item on our agenda is choosing a paper to present. As mentioned yesterday in class, please e-mail myself and also my TA (Sahel Sharify) with your top three paper selections, in the order of your preference. I would also appreciate it if you can go to the doodle link that is posted here and fill in three or more paper selections. Hopefully, with all this info, we can assign each of you a paper to present. Thank you to the people who have already done this. The papers will be assigned in FIFO order of our getting your preferences and also based on the doodle for people we have difficuly assigning after the first round of e-mails are in. A final paper assignment with each student name assigned to a paper and some possible slight reshuffling of the paper presentation schedule will be posted after all selections are in. Thank you so much for your collaboration on this and I look forward to teaching you in this class!
+
+			</p>
+			
+			<p>
+				<strong>- Sep. 8, 2014</strong>:&nbsp; You may sign up for paper presentations @ <a href="http://doodle.com/38cgtur2a9abm3qt">Presentation Poll</a>.
+			</p>
+						
+			<p>
+				&nbsp;</p>-->
+			<div align="center">
+				<hr align="center" size="2" width="100%">
+			</div>
+			<h2>
+				Overview</h2>
+			<p>
+				This course is an intermediate graduate course in the area of 
+parallel programming. In the first part of the course we will briefly 
+introduce the architecture of parallel systems and the concept of data 
+dependencies/races. The three most commonly used parallel programming 
+paradigms (shared memory, distributed memory and data parallel) will<span class="GramE">&nbsp; then</span>
+ be examined in detail. An overview of automatic parallelization of 
+programs and the use of parallel processing in related domains such as 
+parallel and distributed database transaction processing will also be 
+given.&nbsp;<br>
+				In the second part of the course selected research topics will be 
+examined. This part of the course consists of student-lead discussions 
+of relevant research papers. &nbsp;A research-intensive group project in
+ an area related to program parallelization is a fundamental part of the
+ course. &nbsp;The projects can be done individually or in small teams 
+of two or three people. The project outcome will be presented in a class
+ session at the end of the semester. A list of suggested research 
+projects has been posted (<a href="project_suggestions.txt">project_suggestions.txt</a>). Students are also encouraged to propose their own projects and discuss them with me. Please also read:<br>
+				<a href="advice.txt">Class Goals and Advice from Instructor</a></p>
+			<h2>
+				Grading</h2>
+			<ul type="disc">
+				<li class="MsoNormal" style="">
+					Research paper presentation - 10%</li>
+				<li class="MsoNormal" style="">
+					Research paper summaries - 10%</li>
+				<li class="MsoNormal" style="">
+					Assignments - 10% (expect 1)</li>
+				<li class="MsoNormal" style="">
+					Class participation - 10%</li>
+				<li class="MsoNormal" style="">
+					Project report and presentation - remaining %</li>
+			</ul>
+			<h2>
+				Textbooks and Pre-requisites</h2>
+			<p class="MsoNormal">
+				There is no required textbook for the class. You should be fine with
+ the lectures and papers posted on this site. However, here are some 
+suggestions for additional reading:</p>
+			<p>
+				<b>Parallel Programming in C with MPI and <span class="SpellE">OpenMP</span></b><br>
+				<span class="small">by <a href="http://www.amazon.com/exec/obidos/search-handle-url/index=books&field-author=Quinn,%2520Michael%2520J./104-8619143-1359112">Michael J. Quinn</a></span></p>
+			<p>
+				<b>Threads Primer: A Guide to Multithreaded Programming</b><br>
+				<span class="small">by <a href="http://www.amazon.com/exec/obidos/search-handle-url/index=books&field-author=Lewis,%2520Bil/104-8619143-1359112"><span class="SpellE">Bil</span> Lewis</a>, <a href="http://www.amazon.com/exec/obidos/search-handle-url/index=books&field-author=Berg,%2520Daniel%2520J./104-8619143-1359112">Daniel J. Berg</a></span></p>
+			<p>
+				<b>Concurrency Control and Recovery in Database Systems</b><br>
+				<span class="small">by <a href="http://www.amazon.com/exec/obidos/search-handle-url/index=books&field-author=Bernstein,%2520Philip%2520A./104-8619143-1359112">Philip A. Bernstein</a>, <a href="http://www.amazon.com/exec/obidos/search-handle-url/index=books&field-author=Hadzilacos,%2520Vassos/104-8619143-1359112">Vassos Hadzilacos</a>, <a href="http://www.amazon.com/exec/obidos/search-handle-url/index=books&field-author=Goodman,%2520Nathan/104-8619143-1359112">Nathan Goodman</a></span> (free on-line edition you can download from http://research.microsoft.com/pubs/ccontrol/ in .<span class="SpellE">pdf</span>)<br>
+				<br>
+				It would be good for you if you had basic understanding of operating
+ system principles, basic architecture and some knowledge of network 
+programming. These are not strict pre-requisites <span class="GramE">though,</span> most of the necessary material will be covered in class.</p>
+			<h2>
+				Help for Project</h2>
+			<p>
+				Sample project report: <a href="http://www.eecg.toronto.edu/~amza/ece1747h/homeworks/quake-final.doc">Link to Sample Project Report.</a><br style="">
+				<!--[if !supportLineBreakNewLine]--><!--[endif]--></p>
+			<h2>
+				Help for Programming Assignments</h2>
+			<p>
+				<span class="SpellE">Pthread</span> program examples have been posted here: <a href="http://www.eecg.toronto.edu/~amza/ece1747h/homeworks/examples/">Code Examples</a>.</p>
+			<p>
+				Please also consult this <span class="SpellE">pthread</span> <a href="http://www.eecg.toronto.edu/~amza/ece1747h/homeworks/Usingpthreads.html">How to use guide</a> and this <a href="http://www.eecg.toronto.edu/~amza/ece1747h/homeworks/pthreads_man.html"><span class="SpellE">pthread</span> reference manual</a></p>
+			<h2>
+				Programming Assignments</h2>
+        TBA
+        
+        <!--
+			<p>
+				The first programming assignment is out: <a href="homeworks.html"> Assignment 1</a>.</p>
+			<p>
+				Pthread program examples have been posted here: <a href="http://www.eecg.toronto.edu/~amza/ece1747h/homeworks/examples/">Code Examples</a>. Please also consult this pthread <a href="http://www.eecg.toronto.edu/~amza/ece1747h/homeworks/Usingpthreads.html">How to use guide</a> and this <a href="http://www.eecg.toronto.edu/~amza/ece1747h/homeworks/pthreads_man.html">pthread reference manual</a></p>
+			MPI program examples have been posted here: <a href="http://www.eecg.toronto.edu/~amza/ece1747h/homeworks/examples/MPI/">Code Examples</a>. Please also consult this MPI <a href="http://www.eecg.toronto.edu/~amza/ece1747h/homeworks/UsingMPI.html">How to use guide</a> &nbsp;
+			<p>
+				&nbsp;</p> -->
+			<h2>
+				Schedule</h2>
+			<h2>
+				<o:p></o:p></h2>
+        <h3>***Here are a list of papers you will present.  Please select a paper that you would like to present using <a href="http://doodle.com/poll/5mk9br4vzwgunqa5">this</a> link.  SELECTION IS BASED ON FIRST COME FIRST SERVE BASIS.  Also, a maximum of 2 people can select a single paper.  In that case, it becomes a group presentation.  There is no connection between paper presentation group and final project group, meaning that you may end up presenting with a person who is not in your final project group.  The choice for forming the final project group is free, with a limit of max 3 people per group.  IF YOU WANT TO CARRY OUT FINAL PROJECT INDIVIDUALLY, YOU HAVE TO TALK WITH DR. AMZA.</h3>
+			------------------------------------------
+			<table class="MsoNormalTable" border="1" cellpadding="0" height="3031" width="1117">
+				<tbody>
+					<tr style="height: 34.5pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 34.5pt;" width="48">
+							<p class="MsoNormal" style="text-align: center;" align="center">
+								<b>Date</b></p>
+						</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 34.5pt;" width="163">
+							<p class="MsoNormal" style="text-align: center;" align="center">
+								<b>Topic</b></p>
+						</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 34.5pt;" width="596">
+							<p class="MsoNormal" style="text-align: center;" align="center">
+								<st1:city w:st="on"><st1:place w:st="on"><b>Reading</b></st1:place></st1:city></p>
+						</td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 34.5pt;" width="110">
+							<p class="MsoNormal" style="text-align: center;" align="center">
+								<b>Assignment<br>
+								Due Dates</b></p>
+						</td>
+					</tr>
+					<tr style="height: 33pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 33pt;" width="48">
+							<p class="MsoNormal">
+								Sep 18</p>
+						</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 33pt;" width="163">
+							<p class="MsoNormal">
+								Intro and project suggestion <a href="http://www.eecg.toronto.edu/~amza/ece1747h/slides/lec0102-08.ppt">Slides-part1</a> <a href="http://www.eecg.toronto.edu/~amza/ece1747h/slides/lec0304.ppt">Slides-part2</a></p>
+						</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 33pt;" width="596">
+							<p class="MsoNormal">
+								&nbsp;</p>
+						</td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 33pt;" width="110">
+							<p class="MsoNormal">
+								&nbsp;</p>
+						</td>
+					</tr>
+					<tr style="height: 49.5pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 49.5pt;" width="48">
+							<p class="MsoNormal">
+								Sep 25</p>
+						</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 49.5pt;" width="163">
+							<p class="MsoNormal">
+								Parallel Programming and Optimizations <a href="http://www.eecg.toronto.edu/~amza/ece1747h/slides/2008/Pthreads-mod.ppt"><span class="SpellE">Pthreads</span></a> <a href="http://www.eecg.toronto.edu/~amza/ece1747h/slides/2008/OpenMP.ppt"><span class="SpellE">OpenMP</span> Slides</a></p>
+						</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 49.5pt;" width="596">
+							<p class="MsoNormal">
+								&nbsp;</p>
+						</td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 49.5pt;" width="110">
+							<p class="MsoNormal">
+								&nbsp;</p>
+						</td>
+					</tr>
+					<tr style="height: 50pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 49.5pt;" width="48">
+							<p class="MsoNormal">
+								Oct 2</p>
+						</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 49.5pt;" width="163">
+							<p class="MsoNormal">
+								Parallel Programming and Optimizations <a href="http://www.eecg.toronto.edu/~amza/ece1747h/slides/2008/Amza-game-tm.ppt">Project ideas: TM/Games</a> <br>
+								<a href="http://www.eecg.toronto.edu/~amza/ece1747h/slides/Challenge-1747.ppt">Answer to Challenge</a> 
+								<br>
+								<a href="http://www.eecg.toronto.edu/~amza/ece1747h/slides/pitch-Brain.pptx">Brain Pipeline</a> <br>
+								
+								</p>
+						</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 49.5pt;" width="596">
+							
+							<p class="MsoNormal">
+								<strong>1</strong>.<a href="http://www.eecg.toronto.edu/~amza/papers/f87-chen.pdf">Locality Aware Dynamic Load Management for Massively Multiplayer Games</a>,
+ Jin Chen, Baohua Wu, Margaret Delap, Bjorn Knutsson, Honghui Lu and 
+Cristiana Amza, ACM SIGPLAN Symposium on Principles and Practice of 
+Parallel Programming (PPoPP 2005),June 2005
+								<br>
+							<span style="color: green;"></span>							
+							</p>
+						</td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 49.5pt;" width="110">
+							<p>
+								Paper summaries</p>
+						</td>
+					</tr>
+					<tr style="height: 50pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 49.5pt;" width="48">
+							<p class="MsoNormal">
+								Oct 9</p>
+						</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 49.5pt;" width="163">
+							<p>
+								Lock Synchronization and Optimization</p>
+							<p>
+								<o:p>&nbsp;</o:p></p>
+						</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 49.5pt;" width="596">
+
+<p class="MsoNormal">
+								Informal oral project proposals.</p>
+							<p class="MsoNormal">
+								<strong>2.</strong> <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/quake-parallel-ipdps04.pdf"> Parallelization and Performance of Interactive Multiplayer Game Servers</a>,
+ Ahmed Abdelkhalek and Angelos Bilas. In Proc. of the 18th International
+ Parallel and Distributed Processing Symposium (IPDPS 2004), April 2004
+								<br>
+								<span style="color: green;"></span>
+							</p>
+							
+							
+							<p class="MsoNormal">
+								<strong>3</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/donnybrook.pdf">Donnybrook: Enabling Large-Scale, High-Speed, Peer-to-peer Games</a>,
+ Ashwin Bharambe, John R. Douceur, Jacob R. Lorch, Thomas Moscibroda, 
+Jeffrey Pang, Srinivasan Seshan, and Xinyu Zhuang, SIGCOMM, 2008.
+								<br>
+								<span style="color: green;"></span>							
+							</p>
+							
+						</td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 49.5pt;" width="110">
+							<p class="MsoNormal">
+								Proposal &amp; Paper summaries</p>
+						</td>
+					</tr>
+					<tr style="height: 50pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 1.5in;" width="48">
+							<p class="MsoNormal">
+								Oct 16</p>
+						</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 1.5in;" width="163">
+							<p class="MsoNormal">
+								Distributed Applications and Environments</p>
+						</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 1.5in;" width="596">
+							<p class="MsoNormal">
+								Informal oral project proposals (<span class="SpellE">contd</span>).</p>
+							<p class="MsoNormal">
+								<o:p>&nbsp;</o:p></p>
+								
+							<p class="MsoNormal">
+								<strong>4</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/tocs91.pdf"> Algorithms for scalable synchronization on shared-memory multiprocessors </a>, John M. Mellor-Crummey and Michael L. Scott. ACM Transactions on Computer Systems, 9 (1):21-65, February 1991.
+								<br>
+								<span style="color: green;"></span>
+							</p>
+							
+							<p class="MsoNormal">
+							<a href="http://www.eecg.toronto.edu/~amza/ece1747h/slides/MapReduce.1.4.pptx">Tutorial on MapReduce</a>
+							</p>
+							<p class="MsoNormal">
+								<strong>5</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/cloudblast.pdf">CloudBLAST: Combining MapReduce and Virtualization on Distributed Resources for Bioinformatics Applications </a>
+								<br>
+								<span style="color: green;"></span>
+							</p>
+								
+							
+							
+						</td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 1.5in;" width="110">
+							<p class="MsoNormal" style="margin-bottom: 12pt;">
+								Proposal &amp; Paper summaries</p>
+						</td>
+					</tr>
+					<tr style="height: 50pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 50pt;" width="48">
+							<p class="MsoNormal">
+								Oct 23</p>
+						</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 50pt;" width="163">
+							<p class="MsoNormal" style="">
+								Software Distributed Shared Memory</p>
+						</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 50pt;" width="596">
+							
+							<p class="MsoNormal">
+								&nbsp;</p>
+							<p class="MsoNormal">
+								<strong>6</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/ivy91.pdf"> Memory Coherence in Shared Virtual Memory Systems</a>, Kai Li, Paul Hudak, 1991 ivy91.pdf
+								<br>
+								<span style="color: green;"></span>
+							</p>
+							<p class="MsoNormal">
+								<strong>7</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/munin91.pdf">Implementation and Performance of Munin</a>. John Carter, John Bennett, and Willy Zwaenepoel
+								<br>
+								<span style="color: green;"></span>
+							</p>
+							
+							<p>
+								<strong>8</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/treadmarks94.pdf"> TreadMarks: Distributed Shared Memory on Standard Workstations and Operating Systems </a>, P. Keleher, A.L. Cox, S. Dwarkadas and W. Zwaenepoel, OSDI '94.
+								<br>
+								<span style="color: green;"> </span>
+							</p>
+							
+							
+							
+							<p style="">
+								Short Introduction to Event-Driven Servers by Instructor
+							</p>
+						</td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 50pt;" width="110">
+							<p class="MsoNormal" style="">
+								Paper summaries</p>
+						</td>
+					</tr>
+					<tr style="height: 50pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 50pt;" width="48">
+							<p class="MsoNormal" style="">
+								Oct 30</p>
+						</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 50pt;" width="163">
+							<p class="MsoNormal">
+								
+								Programming Paradigms for new Environments: OpenMP on Clusters, CUDA,
+and OpenCL for GPUs
+								
+								</p>
+						</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 50pt;" width="596">
+							
+							<p>
+								<strong>9</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/hhlopenmp-SMP.pdf">OpenMP for Networks of SMPs </a>,
+ Y.C. Hu, H. Lu, A.L. Cox, and W. Zwaenepoel, Journal of Parallel and 
+Distributed Computing, vol. 60 (12), pp. 1512-1530, December 2000
+								<br>
+								<span style="color: green;"></span>
+							</p>
+							
+							
+							<p>
+							<strong>10</strong>.
+							<a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/lawn228.pdf">From CUDA to OpenCL: Towards a performance-portable solution for multi-platform GPU programming </a>,
+							Du Peng, Rick Weber, Piotr Luszczek, Stanimire Tomov, Gregory Peterson, and Jack Dongarra, Parallel Computing 38, no. 8 (2012): 391-407.
+							<br>
+								<span style="color: green;"></span>
+							
+						</p></td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 50pt;" width="110">
+							<p class="MsoNormal">
+								Papers summaries</p>
+						</td>
+					</tr>
+
+
+
+
+					<tr style="height: 50pt;">
+                                                <td style="padding: 3.75pt; width: 35.8pt; height: 116.25pt;" width="48">
+                                                        <p class="MsoNormal">
+                                                                Nov 6&nbsp;</p>
+                                                </td>
+                                                <td style="padding: 3.75pt; width: 122.6pt; height: 116.25pt;" width="163">
+                                                        <p class="MsoNormal">
+
+                                                                Multithreading <span class="SpellE">vs</span> Event-Driven model for Server Code
+                                                                </p>
+                                                        <p style="">
+                                                                &nbsp;</p>
+                                                </td>
+                                                <td style="padding: 3.75pt; width: 447.3pt; height: 116.25pt;" width="596">
+
+							 <p>
+                                                                <strong>11</strong>. <a href="http://dx.doi.org/10.1016/j.jpdc.2008.05.014">A Performance Study of General-Purpose Applications On Graphics Processors Using CUDA </a>,
+ Shuai Che, Michael Boyer, Jiayuan Meng, David Tarjan, Jeremy W.
+Sheaffer, Kevin Skadron, JPDC, Volume 68, Issue 10 General-Purpose
+Processing Using Graphics Processing Units, October 2008.
+                                                                <br>
+                                                                <span style="color: green;"></span>
+                                                       
+							</p>
+							 <p>
+                                                                <strong>12</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/cpe1860.pdf">Productivity of GPUs Under Different Programming Paradigms</a>,
+ Maria Malik,Teng Li, Umar Sharif, Rabia Shahid, Tarek El-Ghazawi, Greg
+Newby, Concurrency and Computation: Practice and Experience 2012.
+                                                                <br>
+                                                                <span style="color: green;"></span>
+                                                        </p>
+
+                                                        <p>
+                                                                <strong>13</strong>. <a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6903679&tag=1">Porting a neuro-imaging application to a CPU-GPU cluster </a>, R. S. Nakhjavani, S. Sharify, A. B. Hashemi, A. W. Lu, C. Amza, and S. Strother, High Performance Computing &amp;
+Simulation (HPCS), International Conference on, pp. 137-145. IEEE, 2014.
+                                                                <br>
+                                                                <span style="color: green;"> </span>
+                                                        </p>
+                                                       
+
+                                                </td>
+                                                <td style="padding: 3.75pt; width: 1.15in; height: 0.75pt;" width="110">
+                                                        <p class="MsoNormal" style="">
+                                                                Paper summaries</p>
+                                                </td>
+                                        
+					</tr><tr style="height: 50pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 50pt;" width="48">
+							<p class="MsoNormal" style="">
+								Nov 13</p>
+						</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 50pt;" width="163">
+							<p class="MsoNormal">
+								
+								Advanced Synchronization Mechanisms in Multiprocessor and Distributed Systems
+								
+								</p>
+						</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 128.25pt;" width="596">
+							
+							 <p>
+                                                                <strong>13</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/flash.pdf">Flash: An Efficient and Portable Web Server </a>, Vivek S. Pai, Peter Druschel, Willy Zwaenepoel, USENIX Annual Technical Conference, 1999.
+                                                                <br>
+                                                                <span style="color: green;"></span>
+                                                        </p>
+                                                        <p>
+                                                                <strong>14</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/seda-sosp01.pdf">SEDA: An Architecture for Well-Conditioned, Scalable Internet Services </a>, Presented at the Eighteenth Symposium on Operating Systems Principles (SOSP'01), Lake Louise, Canada, October 24, 2001.
+                                                                <br>
+                                                                <span style="color: green;"></span>
+                                                        </p>
+
+							 <p class="MsoNormal">
+                                                                <strong>15</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/seda-usits03.pdf">Adaptive Overload Control for Busy Internet Servers</a>,
+ Matt Welsh and David Culler. In Proceedings of the 4th USENIX
+Conference on Internet Technologies and Systems (USITS'03), March 2003.
+                                                                <br>
+                                                                <span style="color: green;"> </span>
+                                                        </p>
+
+
+							<p>
+								<strong>16</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/laio04.pdf">Lazy Asynchronous I/O for Event Driven Servers</a>, Elmeleegy, Anupam Chanda, Alan L. Cox and Willy Zwaenepoel, in Proceedings of the USENIX 2004 Annual Technical Conference.
+								<br>
+								<span style="color: green;"></span>
+							</p>						
+							
+						<!--	<p class="MsoNormal">
+								<strong>17</strong>. <a href="http://www.eecg.toronto.edu/%7Eamza/ece1747h/papers/cache-conscious-concurrency-control.pdf">Cache-Conscious Concurrency Control of Main-Memory Indexes on Shared-Memory Multiprocessor Systems</a>, Sang K. Cha, Sangyong Hwang, Kihong Kim, Keunjoo Kwon
+								<br>
+								<span style="color: green;"></span>
+							</p>
+						-->	
+							
+							
+							
+						</td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 128.25pt;" width="110">
+							<p class="MsoNormal">
+								Paper summaries<o:p></o:p></p>
+						</td>
+					</tr>
+					<tr style="height: 50pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 50pt;" width="48">
+							<p class="MsoNormal" style="">
+								Nov 20</p>
+						</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 50pt;" width="163">
+							<p class="MsoNormal">
+								Nonblocking Synchronization and TM</p>
+						</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 128.25pt;" width="596">
+							
+							 <p class="MsoNormal">
+                                                                <strong>17</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/pai_micro99.pdf">Code Transformations to Improve Memory Parallelism</a>, Vijay S. Pai and Sarita Adve
+                                                                <br>
+                                                                <span style="color: green;"></span>
+                                                        </p>
+
+							<p>
+								<strong>18</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/rcu.pdf">Read Copy Update: Using Execution History to Solve Concurrency Problems</a>, Mc Kenney P. andSlingwine J.
+								<br>
+								<span style="color: green;"></span>
+							</p>
+							<p>
+								<strong>19</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/podc-moir.pdf">Scherer III: Software Transactional Memory for Dynamic-Sized Data Structures</a>, Maurice Herlihy, Victor Luchangco, Mark Moir, William N. PODC 2003
+								<br>
+								<span style="color: green;"></span>
+							</p>
+						<!--	<p>
+								<strong>20</strong>. <a href="http://www.eecg.toronto.edu/%7Eamza/ece1747h/papers/mcrt.pdf">McRT-STM: A High Performance Software Transactional Memory System for a Multi-Core Runtime</a>, Bratin Saha, Ali-Reza Adl-Tabatabai, Richard L. Hudson, Chi Cao Minh, Benjamin Hertzberg. PPoPP 2006
+								<br>
+								<span style="color: green;">Venkatesh Mahadevan</span>
+							</p>
+						-->	
+							
+							
+						</td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 128.25pt;" width="110">
+							<p class="MsoNormal">
+								Paper summaries<o:p></o:p></p>
+						</td>
+					</tr>
+					<tr style="height: 50pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 50pt;" width="48">
+							<p class="MsoNormal">
+								Nov 27</p>
+						</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 50pt;" width="163">
+							<p class="MsoNormal">
+								Nonblocking Synchronization and TM</p>
+							
+						</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 50pt;" width="596">
+							 <p>
+                                                                <strong>20</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/mcrt.pdf">McRT-STM: A High Performance Software Transactional Memory System for a Multi-Core Runtime</a>, Bratin Saha, Ali-Reza Adl-Tabatabai, Richard L. Hudson, Chi Cao Minh, Benjamin Hertzberg. PPoPP 2006
+                                                                <br>
+                                                                <span style="color: green;"></span>
+                                                        </p>
+							<p>
+								<strong>21</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/dtm.pdf">Exploiting Distributed Version Consistency in a Transactional Memory Cluster</a>, Kaloian Manassiev, Madalin Mihailescu and Cristiana Amza. PPoPP 2006
+								<br>
+								<span style="color: green;"> </span>
+							</p>
+						<!--	<p>
+								<strong>22</strong>. <a href="http://www.eecg.toronto.edu/%7Eamza/ece1747h/papers/steps.pdf">STEPS Towards Cache-Resident Transaction Processing</a>,
+ Stavros Harizopoulos and Anastassia Ailamaki. Proceedings of the 30th 
+International Conference on Very Large Data Bases, Canada, August 2004.
+								<br>
+								<span style="color: green;">Patrick Judd</span>
+							</p>
+							<p>
+								<strong>23</strong>. <a href="http://www.eecg.toronto.edu/%7Eamza/ece1747h/papers/hazard_pointers.pdf">Hazard Pointers: Safe Memory Reclamation for Lock-Free Objects</a>, Maged M. Michael. IEEE Transactions on Parallel and Distributed Systems 2004
+								<br>
+								<span style="color: green;">Andrew Lee</span>
+							</p>
+						
+						-->
+							
+						</td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 50pt;" width="110">
+							<p class="MsoNormal" style="">
+								Paper summaries</p>
+						</td>
+					</tr>
+					<tr style="height: 50pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 50pt;" width="48">
+							Dec 4</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 50pt;" width="163">
+							<p class="MsoNormal">
+							Transactional Memory</p>
+							
+							<p style="">
+								<a href="http://software.intel.com/en-us/blogs/2013/06/07/web-resources-about-intelr-transactional-synchronization-extensions">Intel Haswell TSX</a>
+								<br><br>
+								<a href="http://individual.utoronto.ca/mikedaiwang/tm/Intel_TSX_Overview.pdf">TSX Overview Slides</a>
+							</p>
+							</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 50pt;" width="596">
+							<p>
+								<strong>22</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/stages.pdf">A Case for Staged Database Systems</a>, Stavros Harizopoulos and Anastassia Ailamaki
+								<br>
+								<span style="color: green;"></span>
+							</p>
+							<p>
+								<strong>23</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/games-tm.pdf">Transactional Memory Support for Scalable and Transparent Parallelization of Multiplayer Games</a>, Daniel Lupei, Bogdan Simion, Don Pinto, Matthew Misler, Mihai Burcea, William Krick and Cristiana Amza.
+								<br>
+								<span style="color: green;"> </span>
+							</p>
+							<p>
+								<strong>24</strong>. <a href="http://www.eecg.toronto.edu/~amza/ece1747h/papers/tm-scheduling.pdf"> Scheduling Support for Transactional Memory Contention Management</a>, Maldonado et al. PPoPP 2010
+								<br>
+								<span style="color: green;"></span>
+							</p>
+						<!--	<p>
+								<strong>27</strong>. <a href="http://www.eecg.toronto.edu/%7Eamza/ece1747h/papers/lock-free-stm.pdf">Lock-free and Scalable Multi-Version Software Transactional Memory</a>, Sérgio Miguel Fernandes, João Cachopo. PPoPP 2011
+								<br>
+								<span style="color: green;"></span>
+							</p>
+							<p>
+								<strong>28</strong>. <a href="http://www.redbooks.ibm.com/redpapers/pdfs/redp3613.pdf">Fundamentals of Grid Computing</a>, IBM
+								<br>
+								<span style="color: green;"></span>
+							</p>
+						-->
+						</td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 50pt;" width="110">
+							Paper summaries</td>
+					</tr>
+				<!--	<tr style="height: 50pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 50pt;" width="48">
+							Dec 5</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 50pt;" width="163">
+							GPU</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 50pt;" width="596">
+							
+							
+							
+							
+						</td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 50pt;" width="110">
+							Paper summaries</td>
+					</tr>-->
+					<tr style="height: 9pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 9pt;" width="48">
+							<p class="MsoNormal">
+								Dec 11</p>
+							<p style="">
+								&nbsp;</p>
+						</td>
+						<td style="padding: 3.75pt; width: 122.6pt; height: 9pt;" width="163">
+							<p class="MsoNormal">
+								Project class presentation</p>
+						</td>
+						<td style="padding: 3.75pt; width: 447.3pt; height: 9pt;" width="596">
+							<p style="">
+								<o:p></o:p>Time: TBA, Location: TBA</p>
+						</td>
+						<td style="padding: 3.75pt; width: 1.15in; height: 9pt;" width="110">
+							<p class="MsoNormal" style="">
+								<o:p>&nbsp;</o:p></p>
+						</td>
+					</tr>
+					<tr style="height: 51pt;">
+						<td style="padding: 3.75pt; width: 35.8pt; height: 51pt;" width="48">
+							<p class="MsoNormal">
+								Dec 23</p>
+						</td>
+						<td colspan="4" style="padding: 3.75pt; background: white none repeat scroll 0% 0%; width: 735.2pt; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 51pt;" width="980">
+							<p class="MsoNormal" style="text-align: center;" align="center">
+								Final project report due (by e-mail to me, just the report please)</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="MsoNormal">
+				<o:p>&nbsp;</o:p></p>
+		</div>
+	
+
+
+</body></html>
